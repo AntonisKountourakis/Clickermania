@@ -1,0 +1,151 @@
+/* LOTR Clicker styling */
+.lotr-bg {
+  background-color: #1a1814;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5v-1H1z'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(to bottom, #1a1814, #2c2418);
+  position: relative;
+  overflow: hidden;
+}
+
+.lotr-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(255, 165, 0, 0.05) 0%, transparent 20%);
+  z-index: 0;
+}
+
+/* YouTube-style animations */
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -30px);
+  }
+}
+
+.animate-fadeOut {
+  animation: floatUp 1s forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.click-animation {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* YouTube-style progress bar */
+.video-progress {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.video-progress-fill {
+  height: 100%;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+/* YouTube-style content grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  margin: 0 auto 16px;
+  max-width: 100%;
+}
+
+.content-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(31, 41, 55, 0.3);
+  border-radius: 4px;
+  padding: 4px;
+  text-align: center;
+  position: relative;
+  height: 60px;
+}
+
+.content-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.content-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: rgba(255, 215, 0, 0.8);
+  color: #000;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 1px 4px;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* Ring styling */
+.ring-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.ring-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ring-button:hover::before {
+  opacity: 1;
+}
+
+/* Ring glow effect */
+.ring-glow {
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7));
+}
+
+/* Center alignment styles */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

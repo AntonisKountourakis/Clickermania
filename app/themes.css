@@ -1,0 +1,324 @@
+/* Base Theme Variables */
+:root {
+  /* Default Theme (Western) */
+  --background-gradient: linear-gradient(to bottom, #3d2914, #5a3d20);
+  --card-background: rgba(40, 25, 10, 0.8);
+  --card-border: 2px double #c19a6b;
+  --text-color: #f0d6b7;
+  --accent-color: #e6b142;
+  --button-gradient: linear-gradient(to bottom, #c68642, #8b5a2b);
+  --button-hover-gradient: linear-gradient(to bottom, #e6b142, #c68642);
+  --button-text: #fff8e6;
+  --header-color: #fff8e6;
+  --pattern-opacity: 0.05;
+  --theme-shadow: rgba(0, 0, 0, 0.5);
+  --main-font: "Rye", serif;
+  --body-font: "Playfair Display", serif;
+  --menu-background: rgba(40, 25, 10, 0.9);
+  --menu-text: #f0d6b7;
+  --menu-border: #c19a6b;
+  --menu-hover: rgba(198, 134, 66, 0.3);
+  --settings-gradient: linear-gradient(to bottom right, #3d2914, #8b5a2b);
+  --settings-button: #c68642;
+  --settings-button-hover: #e6b142;
+  --slider-color: #e6b142;
+  --slider-track: rgba(198, 134, 66, 0.3);
+  --modal-overlay: rgba(61, 41, 20, 0.8);
+}
+
+/* Futuristic Theme */
+[data-theme="futuristic"] {
+  --background-gradient: linear-gradient(to bottom, #0a1a2f, #1e3a5f);
+  --card-background: rgba(15, 30, 50, 0.85);
+  --card-border: 2px solid #4fc3f7;
+  --text-color: #b3e5fc;
+  --accent-color: #4fc3f7;
+  --button-gradient: linear-gradient(to bottom, #0288d1, #01579b);
+  --button-hover-gradient: linear-gradient(to bottom, #039be5, #0288d1);
+  --button-text: #ffffff;
+  --header-color: #e1f5fe;
+  --pattern-opacity: 0.05;
+  --theme-shadow: rgba(13, 71, 161, 0.5);
+  --main-font: "Orbitron", sans-serif;
+  --body-font: "Roboto", sans-serif;
+  --menu-background: rgba(10, 26, 47, 0.9);
+  --menu-text: #b3e5fc;
+  --menu-border: #4fc3f7;
+  --menu-hover: rgba(4, 140, 209, 0.3);
+  --settings-gradient: linear-gradient(to bottom right, #0a1a2f, #0288d1);
+  --settings-button: #0288d1;
+  --settings-button-hover: #039be5;
+  --slider-color: #4fc3f7;
+  --slider-track: rgba(79, 195, 247, 0.3);
+  --modal-overlay: rgba(10, 26, 47, 0.8);
+}
+
+/* Retro Arcade Theme */
+[data-theme="retro"] {
+  --background-gradient: linear-gradient(to bottom, #000000, #1a1a2e);
+  --card-background: rgba(20, 20, 40, 0.85);
+  --card-border: 2px solid #ff00ff;
+  --text-color: #00ff00;
+  --accent-color: #ff00ff;
+  --button-gradient: linear-gradient(to bottom, #ff00ff, #cc00cc);
+  --button-hover-gradient: linear-gradient(to bottom, #ff33ff, #dd33dd);
+  --button-text: #ffffff;
+  --header-color: #ffff00;
+  --pattern-opacity: 0.1;
+  --theme-shadow: rgba(255, 0, 255, 0.5);
+  --main-font: "Press Start 2P", cursive;
+  --body-font: "VT323", monospace;
+  --menu-background: rgba(20, 20, 40, 0.9);
+  --menu-text: #00ff00;
+  --menu-border: #ff00ff;
+  --menu-hover: rgba(255, 0, 255, 0.3);
+  --settings-gradient: linear-gradient(to bottom right, #000000, #ff00ff);
+  --settings-button: #ff00ff;
+  --settings-button-hover: #ff33ff;
+  --slider-color: #ff00ff;
+  --slider-track: rgba(255, 0, 255, 0.3);
+  --modal-overlay: rgba(0, 0, 0, 0.8);
+}
+
+/* Nature Theme */
+[data-theme="nature"] {
+  --background-gradient: linear-gradient(to bottom, #1b4d3e, #2d7d63);
+  --card-background: rgba(25, 60, 45, 0.85);
+  --card-border: 2px double #7cb342;
+  --text-color: #dcedc8;
+  --accent-color: #aed581;
+  --button-gradient: linear-gradient(to bottom, #558b2f, #33691e);
+  --button-hover-gradient: linear-gradient(to bottom, #689f38, #558b2f);
+  --button-text: #f1f8e9;
+  --header-color: #f1f8e9;
+  --pattern-opacity: 0.05;
+  --theme-shadow: rgba(27, 94, 32, 0.5);
+  --main-font: "Quicksand", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --menu-background: rgba(27, 77, 62, 0.9);
+  --menu-text: #dcedc8;
+  --menu-border: #7cb342;
+  --menu-hover: rgba(85, 139, 47, 0.3);
+  --settings-gradient: linear-gradient(to bottom right, #1b4d3e, #558b2f);
+  --settings-button: #558b2f;
+  --settings-button-hover: #689f38;
+  --slider-color: #aed581;
+  --slider-track: rgba(174, 213, 129, 0.3);
+  --modal-overlay: rgba(27, 77, 62, 0.8);
+}
+
+/* Dark Modern Theme */
+[data-theme="dark"] {
+  --background-gradient: linear-gradient(to bottom, #121212, #1e1e24);
+  --card-background: rgba(30, 30, 35, 0.9);
+  --card-border: 2px solid #333340;
+  --text-color: #e0e0e0;
+  --accent-color: #bb86fc;
+  --button-gradient: linear-gradient(to bottom, #6200ee, #3700b3);
+  --button-hover-gradient: linear-gradient(to bottom, #7c4dff, #6200ee);
+  --button-text: #ffffff;
+  --header-color: #ffffff;
+  --pattern-opacity: 0.03;
+  --theme-shadow: rgba(0, 0, 0, 0.7);
+  --main-font: "Montserrat", sans-serif;
+  --body-font: "Roboto", sans-serif;
+  --menu-background: rgba(18, 18, 18, 0.9);
+  --menu-text: #e0e0e0;
+  --menu-border: #333340;
+  --menu-hover: rgba(98, 0, 238, 0.2);
+  --settings-gradient: linear-gradient(to bottom right, #121212, #6200ee);
+  --settings-button: #6200ee;
+  --settings-button-hover: #7c4dff;
+  --slider-color: #bb86fc;
+  --slider-track: rgba(187, 134, 252, 0.3);
+  --modal-overlay: rgba(18, 18, 18, 0.8);
+}
+
+/* Apply Theme Variables */
+body {
+  background: var(--background-gradient);
+  color: var(--text-color);
+  font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3,
+.theme-title {
+  font-family: var(--main-font);
+  color: var(--header-color);
+}
+
+.theme-card {
+  background-color: var(--card-background);
+  border: var(--card-border);
+  border-radius: 0.5rem;
+}
+
+.theme-button {
+  background: var(--button-gradient);
+  color: var(--button-text);
+  border: 1px solid var(--accent-color);
+  text-shadow: 1px 1px 2px var(--theme-shadow);
+  transition: all 0.3s;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.theme-button:hover {
+  background: var(--button-hover-gradient);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--theme-shadow);
+}
+
+/* Εφαρμογή θέματος στο μενού */
+.mobile-menu {
+  background-color: var(--menu-background);
+  border-color: var(--menu-border);
+}
+
+.mobile-menu a {
+  color: var(--menu-text);
+}
+
+.mobile-menu a:hover {
+  background-color: var(--menu-hover);
+}
+
+/* Εφαρμογή θέματος στα κουμπιά ελέγχου ήχου */
+.audio-control-button {
+  background: var(--button-gradient);
+  color: var(--button-text);
+  border-color: var(--accent-color);
+}
+
+.audio-control-button:hover {
+  background: var(--button-hover-gradient);
+}
+
+/* Εφαρμογή θέματος στο μενού ρυθμίσεων */
+.settings-panel {
+  background: var(--settings-gradient);
+}
+
+.settings-button {
+  background-color: var(--settings-button);
+}
+
+.settings-button:hover {
+  background-color: var(--settings-button-hover);
+}
+
+/* Εφαρμογή θέματος στα sliders */
+input[type="range"] {
+  accent-color: var(--slider-color);
+  background-color: var(--slider-track);
+}
+
+/* Εφαρμογή θέματος στα modals */
+.modal-overlay {
+  background-color: var(--modal-overlay);
+}
+
+/* Theme-specific pattern backgrounds */
+[data-theme="western"] .theme-pattern::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c19a6b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: -1;
+  opacity: var(--pattern-opacity);
+}
+
+[data-theme="futuristic"] .theme-pattern::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%234fc3f7' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: -1;
+  opacity: var(--pattern-opacity);
+}
+
+[data-theme="retro"] .theme-pattern::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ff00ff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z'/%3E%3C/g%3E%3C/svg%3E");
+  z-index: -1;
+  opacity: var(--pattern-opacity);
+}
+
+[data-theme="nature"] .theme-pattern::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%237cb342' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: -1;
+  opacity: var(--pattern-opacity);
+}
+
+[data-theme="dark"] .theme-pattern::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23bb86fc' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: -1;
+  opacity: var(--pattern-opacity);
+}
+
+/* Mobile Optimizations for Themes */
+@media (max-width: 768px) {
+  .theme-button {
+    padding: 0.75rem 1rem;
+    min-height: 44px; /* Better touch target */
+  }
+
+  /* Increase contrast for better readability on small screens */
+  [data-theme="western"] {
+    --text-color: #fff0d6;
+    --header-color: #ffffff;
+  }
+
+  [data-theme="futuristic"] {
+    --text-color: #d6f5ff;
+    --header-color: #ffffff;
+  }
+
+  [data-theme="retro"] {
+    --text-color: #00ff00;
+    --header-color: #ffff00;
+  }
+
+  [data-theme="nature"] {
+    --text-color: #f1f8e9;
+    --header-color: #ffffff;
+  }
+
+  [data-theme="dark"] {
+    --text-color: #ffffff;
+    --header-color: #ffffff;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  /* Simplify backgrounds on very small screens for performance */
+  [data-theme] .theme-pattern::before {
+    opacity: calc(var(--pattern-opacity) * 0.5);
+  }
+}

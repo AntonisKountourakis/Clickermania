@@ -1,0 +1,235 @@
+.detective-clicker-container {
+  background-color: #1a1f36;
+  background-image: linear-gradient(to bottom, #1a1f36, #2c3e50);
+  color: #e0e0e0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.detective-clicker-header {
+  background: linear-gradient(to right, #2c3e50, #4b6cb7);
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.detective-clicker-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.detective-clicker-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.detective-game-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .detective-game-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detective-click-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 15px;
+  padding: 30px;
+  border: 2px solid #334155;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  min-height: 200px;
+  transition: all 0.2s ease;
+}
+
+.detective-click-area:hover {
+  box-shadow: 0 0 15px rgba(100, 149, 237, 0.5);
+}
+
+.detective-magnifier {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.detective-magnifier-handle {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  background: #4682b4;
+  transform: rotate(45deg);
+  bottom: 0;
+  right: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.detective-magnifier-glass {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(173, 216, 230, 0.2);
+  border: 3px solid #4682b4;
+  box-shadow: 0 0 10px rgba(70, 130, 180, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.detective-magnifier-glass:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 5%, transparent 30%);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.detective-magnifier-glass:after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 20%, rgba(255, 255, 255, 0.1) 50%, transparent 80%);
+}
+
+.detective-magnifier:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.detective-magnifier:active {
+  transform: scale(0.95);
+}
+
+.detective-upgrade-item {
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #334155;
+  transition: all 0.2s ease;
+}
+
+.detective-upgrade-item:hover {
+  background: linear-gradient(to right, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.8));
+  transform: translateX(5px);
+  border-color: #475569;
+}
+
+.detective-upgrade-item.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.detective-upgrade-item.disabled:hover {
+  transform: none;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
+  border-color: #334155;
+}
+
+.detective-achievement {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 58, 138, 0.9);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: bottom 0.5s ease;
+  text-align: center;
+  font-weight: bold;
+  animation: slide-up 0.5s, fade-out 0.5s 2.5s;
+}
+
+.detective-achievement.show {
+  bottom: 20px;
+}
+
+.youtube-click-effect {
+  position: absolute;
+  color: #4682b4;
+  font-weight: bold;
+  pointer-events: none;
+  animation: float-up 1.5s forwards;
+  text-shadow: 0 0 5px rgba(70, 130, 180, 0.7);
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+/* YouTube-style specific overrides */
+.youtube-milestone-progress-bar {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+}
+
+.youtube-upgrade-item,
+.youtube-advanced-upgrade-item {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid #334155;
+}
+
+.youtube-upgrade-item:hover,
+.youtube-advanced-upgrade-item:hover {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: #475569;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,185 @@
+.alien-bg {
+  background: linear-gradient(to bottom, #0a0a1a, #1a1a2a);
+  overflow: hidden;
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 4s infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.ufo-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ufo-container::before {
+  content: "🛸";
+  position: absolute;
+  font-size: 30px;
+  animation: flyby 15s linear infinite;
+  opacity: 0.7;
+}
+
+.ufo-container::after {
+  content: "🛸";
+  position: absolute;
+  font-size: 20px;
+  top: 30%;
+  animation: flyby 20s linear infinite;
+  animation-delay: 5s;
+  opacity: 0.5;
+}
+
+@keyframes flyby {
+  0% {
+    left: -50px;
+    top: 10%;
+  }
+  100% {
+    left: calc(100% + 50px);
+    top: 15%;
+  }
+}
+
+.alien-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  transition: transform 0.2s;
+}
+
+.alien-container:hover {
+  transform: scale(1.05);
+}
+
+.alien-pulse {
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ufo {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ufo-top {
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(to bottom, #4ade80, #22c55e);
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.6);
+}
+
+.ufo-bottom {
+  width: 80px;
+  height: 20px;
+  background: linear-gradient(to bottom, #22c55e, #16a34a);
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.ufo-light {
+  width: 20px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(74, 222, 128, 0), rgba(74, 222, 128, 0.3));
+  position: absolute;
+  bottom: -40px;
+  border-radius: 50%;
+  animation: light-pulse 2s infinite;
+}
+
+@keyframes light-pulse {
+  0% {
+    opacity: 0.3;
+    height: 30px;
+  }
+  50% {
+    opacity: 0.7;
+    height: 40px;
+  }
+  100% {
+    opacity: 0.3;
+    height: 30px;
+  }
+}
+
+.alien {
+  font-size: 24px;
+  position: absolute;
+  top: 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,215 @@
+.greek-mythology-container {
+  background: linear-gradient(135deg, #3498db, #7b68ee);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: "Times New Roman", serif;
+  padding: 20px;
+}
+
+.greek-mythology-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.greek-mythology-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.greek-mythology-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.greek-mythology-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.greek-mythology-click-area {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.greek-mythology-click-area:active {
+  transform: scale(0.95);
+}
+
+.greek-mythology-click-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.greek-mythology-stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.greek-mythology-stat {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 150px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.greek-mythology-stat h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.greek-mythology-stat p {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.greek-mythology-upgrades {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.greek-mythology-upgrade {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.greek-mythology-upgrade:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
+}
+
+.greek-mythology-upgrade.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.greek-mythology-upgrade h3 {
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.greek-mythology-upgrade p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.greek-mythology-upgrade-cost {
+  font-size: 0.9rem;
+  color: #ffcc00;
+}
+
+.click-effect {
+  position: absolute;
+  color: gold;
+  font-weight: bold;
+  pointer-events: none;
+  animation: float-up 1s ease-out;
+  animation-fill-mode: forwards;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.greek-mythology-achievements {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.greek-mythology-achievements h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.greek-mythology-achievement-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.greek-mythology-achievement {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.greek-mythology-achievement.unlocked {
+  background: rgba(255, 215, 0, 0.2);
+}
+
+.greek-mythology-achievement h4 {
+  margin: 0 0 5px 0;
+}
+
+.greek-mythology-achievement p {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.greek-mythology-reset {
+  margin-top: 40px;
+  padding: 10px 20px;
+  background: rgba(255, 0, 0, 0.3);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.greek-mythology-reset:hover {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .greek-mythology-header h1 {
+    font-size: 2rem;
+  }
+
+  .greek-mythology-upgrades {
+    grid-template-columns: 1fr;
+  }
+
+  .greek-mythology-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+}

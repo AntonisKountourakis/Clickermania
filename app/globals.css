@@ -1,0 +1,432 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --top-spacing: 0px; /* Added to control top spacing globally */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* Make all text non-selectable throughout the app */
+html,
+body,
+p,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Make sure buttons are clearly identifiable */
+button,
+[role="button"],
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+html {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  scroll-padding-top: 0 !important;
+}
+
+body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  color: rgb(var(--foreground-rgb));
+}
+
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.app-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Remove any default margins that might be causing spacing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Western theme styling */
+.western-theme {
+  background: #2c1e0f;
+  color: #d2b48c;
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.western-theme::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D2B48C' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: -1;
+}
+
+.western-theme::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Western typography */
+h1,
+h2,
+h3,
+.western-title {
+  font-family: "Rye", serif;
+}
+
+p,
+.western-text {
+  font-family: "Playfair Display", serif;
+}
+
+/* Western card styling */
+.western-card {
+  background-color: rgba(30, 20, 10, 0.7);
+  border: 2px double #8b4513;
+  border-radius: 0.5rem;
+}
+
+/* Western button styling */
+.western-button {
+  background: linear-gradient(to bottom, #a0522d, #8b4513);
+  color: #f5deb3;
+  border: 1px solid #daa520;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-family: "Rye", serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.western-button:hover {
+  background: linear-gradient(to bottom, #b8860b, #a0522d);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Ensure animations work on all devices */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #7928ca, #ff0080);
+  background-size: 400% 400%;
+}
+
+.animate-gradient {
+  animation: gradient 15s ease infinite;
+}
+
+/* Enhanced button styles for all app buttons */
+button,
+.button,
+[role="button"] {
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+button:hover,
+.button:hover,
+[role="button"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active,
+.button:active,
+[role="button"]:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .animate-gradient {
+    animation: gradient 15s ease infinite !important;
+  }
+
+  /* Remove any animation blockers */
+  .reduced-animation,
+  .low-end {
+    animation: inherit !important;
+  }
+
+  .reduced-animation *,
+  .low-end * {
+    animation: inherit !important;
+    transition: inherit !important;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+    touch-action: manipulation; /* Improves tap responsiveness */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure animations work on mobile */
+  .animated-gradient {
+    animation: gradient 15s ease-in-out infinite !important;
+    will-change: background-position;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Force GPU acceleration for better performance */
+  .animated-gradient {
+    transform: translateZ(0); /* Force GPU acceleration */
+    backface-visibility: hidden;
+  }
+
+  /* Optimize text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Adjust container padding for mobile */
+  .game-container {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Optimize card sizes for mobile */
+  .game-card {
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Adjust stat displays for mobile */
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Stack elements vertically on mobile */
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+
+  /* Adjust buttons for easier touch */
+  button,
+  .game-button,
+  .click-button,
+  .upgrade-button {
+    min-height: 44px; /* Minimum touch target size */
+    padding: 0.5rem 1rem !important;
+  }
+
+  /* Reduce shadow complexity */
+  .game-card,
+  .stat-card,
+  button,
+  .game-button,
+  .click-button,
+  .upgrade-button {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Disable bubbles */
+  .bubble,
+  [class*="bubble-"],
+  .bubbles,
+  .bubble-container {
+    display: none !important;
+  }
+
+  /* Enable animated gradient */
+  .bg-gradient {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .animate-gradient {
+    animation: gradient 15s ease infinite !important;
+  }
+}
+
+/* Low-end device optimizations */
+@media (max-width: 480px) {
+  /* Further reduce visuals for low-end devices */
+  body {
+    background-image: none !important;
+  }
+
+  /* Simplify backgrounds */
+  .game-bg::before {
+    display: none !important;
+  }
+
+  /* Disable most animations */
+  .low-end * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Single column layout */
+  .stats-container {
+    grid-template-columns: 1fr !important;
+  }
+}

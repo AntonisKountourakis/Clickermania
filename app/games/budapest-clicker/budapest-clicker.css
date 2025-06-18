@@ -1,0 +1,165 @@
+.budapest-bg {
+  background: linear-gradient(to bottom, #ffccd5 0%, #f8bbd0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.clouds::before,
+.clouds::after {
+  content: "☁️";
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.7;
+  animation: float 30s linear infinite;
+}
+
+.clouds::before {
+  top: 10%;
+  left: -5%;
+}
+
+.clouds::after {
+  top: 20%;
+  left: 80%;
+  animation-delay: -15s;
+  animation-duration: 35s;
+}
+
+.hotel-facade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background-color: #f48fb1;
+  clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hotel-container {
+  position: relative;
+  border: 2px solid #f48fb1;
+  box-shadow: 0 4px 12px rgba(244, 143, 177, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hotel-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(244, 143, 177, 0.4);
+}
+
+.hotel-windows {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  padding: 5px;
+}
+
+.hotel-windows::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f8bbd0;
+  z-index: -1;
+}
+
+.hotel-door {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20%;
+  height: 30%;
+  background-color: #c2185b;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.hotel-sign {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f8bbd0;
+  border: 2px solid #c2185b;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #c2185b;
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+  animation: particle-float var(--duration) ease-out forwards;
+}
+
+.level-up-glow {
+  animation: level-up-pulse 3s ease-in-out;
+  box-shadow: 0 0 20px 10px rgba(244, 143, 177, 0.7);
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(cos(var(--angle)) * var(--distance)), calc(sin(var(--angle)) * var(--distance))) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes level-up-pulse {
+  0% {
+    box-shadow: 0 0 5px 2px rgba(244, 143, 177, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px 15px rgba(244, 143, 177, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px 2px rgba(244, 143, 177, 0.5);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .hotel-windows {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .hotel-door {
+    width: 30%;
+  }
+}

@@ -1,0 +1,327 @@
+.galaxy-clicker-container {
+  background: linear-gradient(to bottom, #000000, #0d1117);
+  font-family: "Orbitron", sans-serif;
+  color: #64ffda;
+}
+
+.galaxy-clicker-header {
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 3px solid #1a237e;
+  padding: 15px;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.7);
+}
+
+.galaxy-clicker-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.galaxy-clicker-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  color: #7986cb;
+}
+
+.galaxy-game-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .galaxy-game-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+.galaxy-click-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 17, 23, 0.7);
+  border-radius: 15px;
+  padding: 30px;
+  border: 2px solid #1a237e;
+  box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
+}
+
+.galaxy-planet {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at 30% 30%, #7986cb, #3949ab, #1a237e);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.galaxy-planet:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 25%),
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 20%);
+  border-radius: 50%;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.galaxy-planet:after {
+  content: "";
+  position: absolute;
+  width: 160%;
+  height: 20px;
+  background: rgba(100, 255, 218, 0.2);
+  top: 50%;
+  left: -30%;
+  transform: translateY(-50%) rotate(30deg);
+  filter: blur(5px);
+}
+
+.galaxy-ring {
+  position: absolute;
+  width: 180%;
+  height: 30px;
+  border-radius: 50%;
+  border: 4px solid rgba(100, 255, 218, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(75deg);
+}
+
+.galaxy-planet:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 0 40px rgba(100, 255, 218, 0.5);
+}
+
+.galaxy-planet:active {
+  transform: scale(0.95);
+}
+
+.galaxy-stats {
+  color: #64ffda;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.galaxy-energy {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.galaxy-per-second {
+  font-size: 1rem;
+  color: #7986cb;
+}
+
+.galaxy-upgrades {
+  background: rgba(13, 17, 23, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px solid #1a237e;
+  box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.galaxy-upgrades::-webkit-scrollbar {
+  width: 8px;
+}
+
+.galaxy-upgrades::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.galaxy-upgrades::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 255, 218, 0.3);
+  border-radius: 10px;
+}
+
+.galaxy-upgrade-title {
+  color: #64ffda;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+.galaxy-upgrade-item {
+  background: linear-gradient(to right, rgba(13, 17, 23, 0.8), rgba(26, 35, 126, 0.3));
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  transition: all 0.2s ease;
+}
+
+.galaxy-upgrade-item:hover {
+  background: linear-gradient(to right, rgba(26, 35, 126, 0.3), rgba(13, 17, 23, 0.8));
+  transform: translateX(5px);
+  border-color: rgba(100, 255, 218, 0.7);
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
+
+.galaxy-upgrade-item.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.galaxy-upgrade-item.disabled:hover {
+  transform: none;
+  background: linear-gradient(to right, rgba(13, 17, 23, 0.8), rgba(26, 35, 126, 0.3));
+  border-color: rgba(100, 255, 218, 0.3);
+  box-shadow: none;
+}
+
+.galaxy-upgrade-info {
+  color: #b2dfdb;
+}
+
+.galaxy-upgrade-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #64ffda;
+}
+
+.galaxy-upgrade-description {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.galaxy-upgrade-cost {
+  background: rgba(26, 35, 126, 0.5);
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #64ffda;
+  font-weight: bold;
+  border: 1px solid rgba(100, 255, 218, 0.5);
+  text-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
+}
+
+.galaxy-upgrade-owned {
+  background: rgba(26, 35, 126, 0.3);
+  border-radius: 15px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  color: #7986cb;
+}
+
+@keyframes planet-pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(100, 255, 218, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  }
+}
+
+.galaxy-planet-pulse {
+  animation: planet-pulse 2s infinite;
+}
+
+.galaxy-achievement {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(26, 35, 126, 0.9);
+  color: #64ffda;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+  z-index: 1000;
+  transition: bottom 0.5s ease;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
+}
+
+.galaxy-achievement.show {
+  bottom: 20px;
+}
+
+.galaxy-rank {
+  padding: 10px 15px;
+  background: rgba(26, 35, 126, 0.5);
+  border-radius: 20px;
+  display: inline-block;
+  color: #64ffda;
+  font-weight: bold;
+  border: 1px solid rgba(100, 255, 218, 0.5);
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px rgba(100, 255, 218, 0.5);
+}
+
+.galaxy-click-effect {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #64ffda;
+  font-weight: bold;
+  animation: galaxy-float-up 1.5s forwards;
+  pointer-events: none;
+  text-shadow: 0 0 5px rgba(100, 255, 218, 0.8);
+}
+
+@keyframes galaxy-float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.galaxy-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.galaxy-star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle 4s infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

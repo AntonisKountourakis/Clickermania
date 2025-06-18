@@ -1,0 +1,382 @@
+.restaurant-clicker-container {
+  background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+  font-family: "Playfair Display", serif;
+}
+
+.restaurant-clicker-header {
+  background: rgba(88, 24, 69, 0.9);
+  border-bottom: 3px solid #4a1942;
+  padding: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.restaurant-clicker-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.restaurant-clicker-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.restaurant-game-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .restaurant-game-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+.restaurant-click-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  border: 2px solid #d8bfd8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-plate {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 5px solid #fff;
+  overflow: hidden;
+}
+
+.restaurant-plate:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 5%, transparent 30%);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.restaurant-plate:after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  border: 2px solid #d8bfd8;
+  top: 15%;
+  left: 15%;
+}
+
+.restaurant-plate:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.restaurant-plate:active {
+  transform: scale(0.95);
+}
+
+.restaurant-stats {
+  color: #4a1942;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.restaurant-money {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.restaurant-per-second {
+  font-size: 1rem;
+  color: #9370db;
+}
+
+.restaurant-upgrades {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px solid #d8bfd8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.restaurant-upgrades::-webkit-scrollbar {
+  width: 8px;
+}
+
+.restaurant-upgrades::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.restaurant-upgrades::-webkit-scrollbar-thumb {
+  background-color: #9370db;
+  border-radius: 10px;
+}
+
+.restaurant-upgrade-title {
+  color: #4a1942;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid #e6e6fa;
+  padding-bottom: 10px;
+}
+
+.restaurant-upgrade-item {
+  background: #e6e6fa;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #d8bfd8;
+  transition: all 0.2s ease;
+}
+
+.restaurant-upgrade-item:hover {
+  background: #d8bfd8;
+  transform: translateX(5px);
+  border-color: #9370db;
+}
+
+.restaurant-upgrade-item.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.restaurant-upgrade-item.disabled:hover {
+  transform: none;
+  background: #e6e6fa;
+  border-color: #d8bfd8;
+}
+
+.restaurant-upgrade-info {
+  color: #4a1942;
+}
+
+.restaurant-upgrade-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.restaurant-upgrade-description {
+  font-size: 0.8rem;
+  color: #9370db;
+}
+
+.restaurant-upgrade-cost {
+  background: #d8bfd8;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #4a1942;
+  font-weight: bold;
+  border: 1px solid #9370db;
+}
+
+.restaurant-upgrade-owned {
+  background: #e6e6fa;
+  border-radius: 15px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  color: #9370db;
+}
+
+@keyframes plate-shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.restaurant-plate-shine {
+  position: relative;
+}
+
+.restaurant-plate-shine:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 200% 100%;
+  border-radius: 50%;
+  animation: plate-shine 2s infinite;
+}
+
+.restaurant-achievement {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4a1942;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: bottom 0.5s ease;
+  text-align: center;
+  font-weight: bold;
+}
+
+.restaurant-achievement.show {
+  bottom: 20px;
+}
+
+.restaurant-rank {
+  padding: 10px 15px;
+  background: #e6e6fa;
+  border-radius: 20px;
+  display: inline-block;
+  color: #4a1942;
+  font-weight: bold;
+  border: 1px solid #d8bfd8;
+  margin-bottom: 10px;
+}
+
+.restaurant-click-effect {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #4a1942;
+  font-weight: bold;
+  animation: restaurant-float-up 1.5s forwards;
+  pointer-events: none;
+}
+
+@keyframes restaurant-float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.restaurant-food-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.restaurant-food-icon {
+  width: 30px;
+  height: 30px;
+  background: #e6e6fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #4a1942;
+  border: 1px solid #d8bfd8;
+}
+
+.restaurant-progress-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.restaurant-progress-container {
+  width: 100%;
+  height: 15px;
+  background: #e6e6fa;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.restaurant-progress-label {
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+  color: #9370db;
+}
+
+.restaurant-progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #9370db, #8a2be2);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* YouTube-style progress bar */
+.video-progress {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.video-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #9370db, #8a2be2);
+  transition: width 0.3s ease;
+}
+
+/* Click animation */
+@keyframes click-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.click-animation {
+  animation: click-pulse 0.3s ease;
+}
+
+/* Floating animation for click effects */
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}

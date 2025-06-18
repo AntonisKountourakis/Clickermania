@@ -1,0 +1,277 @@
+.dinosaur-clicker-container {
+  background: linear-gradient(to bottom, #1b5e20, #43a047);
+  font-family: "Jurassic Park", "Arial", sans-serif;
+}
+
+.dinosaur-clicker-header {
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 3px solid #8bc34a;
+  padding: 15px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.dinosaur-clicker-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.dinosaur-clicker-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.dinosaur-game-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .dinosaur-game-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dinosaur-click-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 30px;
+  border: 2px solid rgba(139, 195, 74, 0.6);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.dinosaur-fossil {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(to bottom right, #a1887f, #795548);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+  border: 5px solid #8d6e63;
+  transform-style: preserve-3d;
+}
+
+.dinosaur-fossil:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 5%, transparent 30%);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.dinosaur-fossil:after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 20%, rgba(255, 255, 255, 0.1) 50%, transparent 80%);
+  transform: translateZ(1px);
+}
+
+.dinosaur-fossil:hover {
+  transform: scale(1.05) rotateY(10deg);
+}
+
+.dinosaur-fossil:active {
+  transform: scale(0.95);
+}
+
+.dinosaur-stats {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.dinosaur-power {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.dinosaur-per-second {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.dinosaur-upgrades {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px solid rgba(139, 195, 74, 0.6);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.dinosaur-upgrades::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dinosaur-upgrades::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.dinosaur-upgrades::-webkit-scrollbar-thumb {
+  background-color: rgba(139, 195, 74, 0.6);
+  border-radius: 10px;
+}
+
+.dinosaur-upgrade-title {
+  color: #8bc34a;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.dinosaur-upgrade-item {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(139, 195, 74, 0.3);
+  transition: all 0.2s ease;
+}
+
+.dinosaur-upgrade-item:hover {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  transform: translateX(5px);
+  border-color: rgba(139, 195, 74, 0.7);
+}
+
+.dinosaur-upgrade-item.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dinosaur-upgrade-item.disabled:hover {
+  transform: none;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+  border-color: rgba(139, 195, 74, 0.3);
+}
+
+.dinosaur-upgrade-info {
+  color: #fff;
+}
+
+.dinosaur-upgrade-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.dinosaur-upgrade-description {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.dinosaur-upgrade-cost {
+  background: rgba(139, 195, 74, 0.2);
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid rgba(139, 195, 74, 0.5);
+}
+
+.dinosaur-upgrade-owned {
+  background: rgba(139, 195, 74, 0.1);
+  border-radius: 15px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  color: #aed581;
+}
+
+@keyframes fossil-glow {
+  0% {
+    box-shadow: 0 0 15px rgba(139, 195, 74, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(139, 195, 74, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(139, 195, 74, 0.5);
+  }
+}
+
+.dinosaur-fossil-glow {
+  animation: fossil-glow 2s infinite;
+}
+
+.dinosaur-achievement {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(139, 195, 74, 0.9);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: bottom 0.5s ease;
+  text-align: center;
+  font-weight: bold;
+}
+
+.dinosaur-achievement.show {
+  bottom: 20px;
+}
+
+.dinosaur-rank {
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  display: inline-block;
+  color: #8bc34a;
+  font-weight: bold;
+  border: 1px solid rgba(139, 195, 74, 0.5);
+  margin-bottom: 10px;
+}
+
+.dinosaur-click-effect {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #8bc34a;
+  font-weight: bold;
+  animation: dinosaur-float-up 1.5s forwards;
+  pointer-events: none;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes dinosaur-float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}

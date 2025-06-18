@@ -1,0 +1,50 @@
+/* Remove all top spacing from game pages */
+body,
+html,
+main,
+div {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.game-container {
+  margin: 0;
+  padding: 0;
+}
+
+.game-content {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Ensure back buttons don't create space */
+.back-button-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 50;
+}
+
+/* Ensure game components start at the top */
+[class*="clicker-game"] {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Fix for mobile devices */
+@media (max-width: 768px) {
+  body,
+  html,
+  main,
+  div {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .game-container {
+    margin: 0;
+    padding: 0;
+  }
+}

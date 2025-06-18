@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audio Fallback</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    .controls {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      background: #4a5568;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:hover {
+      background: #2d3748;
+    }
+    audio {
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Audio Test Page</h1>
+    <p>This page tests if the audio file can be played directly.</p>
+    
+    <audio id="test-audio" controls>
+      <source src="/Eternal-Click.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <div class="controls">
+      <button onclick="document.getElementById('test-audio').play()">Play</button>
+      <button onclick="document.getElementById('test-audio').pause()">Pause</button>
+      <button onclick="document.getElementById('test-audio').volume = 0.5">Set Volume 50%</button>
+      <button onclick="document.getElementById('test-audio').muted = !document.getElementById('test-audio').muted">Toggle Mute</button>
+    </div>
+    
+    <div id="status" style="margin-top: 20px; padding: 10px; background: #f8f8f8; border-radius: 4px;">
+      Status: Ready
+    </div>
+    
+    <script>
+      const audio = document.getElementById('test-audio');
+      const status = document.getElementById('status');
+      
+      audio.addEventListener('playing', () => {
+        status.textContent = 'Status: Playing';
+        status.style.background = '#c6f6d5';
+      });
+      
+      audio.addEventListener('pause', () => {
+        status.textContent = 'Status: Paused';
+        status.style.background = '#fed7d7';
+      });
+      
+      audio.addEventListener('error', (e) => {
+        status.textContent = `Status: Error - ${e.target.error ? e.target.error.message : 'Unknown error'}`;
+        status.style.background = '#fed7d7';
+        console.error('Audio error:', e);
+      });
+    </script>
+  </div>
+</body>
+</html>

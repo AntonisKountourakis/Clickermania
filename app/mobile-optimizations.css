@@ -1,0 +1,302 @@
+/* Mobile optimizations while preserving desktop style */
+
+/* Fix for mobile viewport height issues */
+:root {
+  --vh: 1vh;
+}
+
+/* Ensure proper sizing on mobile */
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+  touch-action: manipulation;
+  overflow-x: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.app-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Mobile optimized container */
+.mobile-optimized {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Preserve desktop-like appearance on mobile */
+@media (max-width: 768px) {
+  /* Βελτιώσεις για ομαλή κύλιση στο κινητό */
+  /* Βελτιστοποιήσεις για ομαλή κύλιση */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch !important;
+    scroll-behavior: smooth !important;
+    scroll-snap-type: x mandatory !important;
+    overscroll-behavior-x: contain !important;
+    touch-action: pan-x !important;
+    will-change: scroll-position !important;
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+  }
+
+  /* Βελτιστοποιήσεις για scroll snap */
+  .snap-x {
+    scroll-snap-type: x mandatory !important;
+    -webkit-scroll-snap-type: x mandatory !important;
+  }
+
+  .snap-mandatory {
+    scroll-snap-type: x mandatory !important;
+    -webkit-scroll-snap-type: x mandatory !important;
+  }
+
+  .snap-start {
+    scroll-snap-align: start !important;
+    -webkit-scroll-snap-align: start !important;
+    scroll-snap-align: start;
+    -webkit-scroll-snap-align: start;
+  }
+
+  .snap-center {
+    scroll-snap-align: center !important;
+    -webkit-scroll-snap-align: center !important;
+  }
+
+  /* Βελτιστοποιήσεις για hardware acceleration */
+  .hw-accelerate {
+    transform: translate3d(0, 0, 0) !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    perspective: 1000px !important;
+    -webkit-perspective: 1000px !important;
+    will-change: transform !important;
+  }
+  .preserve-desktop-style {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Larger touch targets while maintaining visual style */
+  .touch-optimized button,
+  .touch-optimized .button,
+  .touch-optimized [role="button"],
+  .touch-optimized input,
+  .touch-optimized select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize card layouts */
+  .mobile-optimized .card {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Optimize grid layouts */
+  .mobile-optimized .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.5rem;
+  }
+
+  /* Optimize text for mobile */
+  .mobile-optimized h1 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .mobile-optimized h2 {
+    font-size: 1.25rem;
+  }
+
+  .mobile-optimized p {
+    font-size: 0.95rem;
+  }
+
+  /* Ensure animations work properly on mobile */
+  @media (max-width: 768px) {
+    /* Force animations to work on mobile */
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .bg-gradient {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #7928ca, #ff0080);
+      background-size: 400% 400%;
+    }
+
+    .animate-gradient {
+      animation: gradient 8s ease infinite !important;
+    }
+
+    /* Remove any animation blockers */
+    .reduced-animation,
+    .low-end {
+      animation: inherit !important;
+    }
+
+    .reduced-animation *,
+    .low-end * {
+      animation: inherit !important;
+      transition: inherit !important;
+    }
+
+    /* Force GPU acceleration for smoother animations */
+    .animate-gradient,
+    .bg-gradient {
+      -webkit-transform: translateZ(0);
+      -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      -o-transform: translateZ(0);
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      perspective: 1000;
+      will-change: background-position;
+    }
+  }
+
+  /* Force GPU acceleration for smoother scrolling */
+  .mobile-optimized {
+    transform: translateZ(0);
+  }
+
+  /* Optimize touch interactions */
+  .mobile-optimized {
+    touch-action: pan-x pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile optimizations for animations and transitions */
+
+  /* Reduce or disable complex animations */
+  .animate-complex {
+    animation-duration: 0.5s !important;
+  }
+
+  /* Optimize transitions */
+  .transition-complex {
+    transition-duration: 0.2s !important;
+  }
+
+  /* Use transform instead of top/left for animations */
+  .use-transform {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01s !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01s !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Hardware acceleration classes */
+.hw-accelerate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.hw-accelerate-opacity {
+  will-change: opacity;
+}
+
+/* Low performance mode styles */
+.low-performance-mode {
+  --particle-count: 15;
+  --animation-speed: 0.5;
+}
+
+.high-performance-mode {
+  --particle-count: 50;
+  --animation-speed: 1;
+}
+
+/* Landscape mode optimizations */
+@media (max-width: 896px) and (orientation: landscape) {
+  .mobile-optimized {
+    height: auto;
+    min-height: 100%;
+  }
+
+  .mobile-optimized .game-content {
+    padding-bottom: 2rem;
+  }
+}
+
+/* Notched device optimizations */
+@supports (padding: max(0px)) {
+  .mobile-optimized {
+    padding-left: max(0.5rem, env(safe-area-inset-left));
+    padding-right: max(0.5rem, env(safe-area-inset-right));
+    padding-top: 0 !important; /* Changed to remove top space */
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Add these optimizations to improve scrolling performance */
+
+/* Enable scroll snap for smoother scrolling */
+.snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+}
+
+.snap-mandatory {
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+  -webkit-scroll-snap-align: start;
+}
+
+/* Βελτιώσεις για iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .scroll-container {
+    -webkit-overflow-scrolling: touch !important;
+  }
+  body {
+    /* The height of the iOS status bar */
+    padding-top: 0 !important;
+  }
+}

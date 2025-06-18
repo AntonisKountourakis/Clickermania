@@ -1,0 +1,160 @@
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -30px);
+  }
+}
+
+.animate-fadeOut {
+  animation: floatUp 1s forwards;
+}
+
+.realestate-bg {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #93c5fd);
+  background-size: 600% 600%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
+}
+
+.realestate-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.estate-button {
+  transition: all 0.3s;
+}
+
+.estate-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+}
+
+.estate-button:active {
+  transform: scale(0.95);
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.property-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.property-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.property-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.property-count {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.market-graph {
+  height: 40px;
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.2) 0%, rgba(234, 179, 8, 0.2) 50%, rgba(34, 197, 94, 0.2) 100%);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.market-indicator {
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  background-color: #3b82f6;
+  transition: left 0.5s ease;
+}
+
+.city-skyline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' preserveAspectRatio='none'%3E%3Cpath d='M0,200 L0,180 L40,180 L40,160 L60,160 L60,140 L80,140 L80,120 L100,120 L100,100 L120,100 L120,80 L140,80 L140,100 L160,100 L160,120 L180,120 L180,100 L200,100 L200,80 L220,80 L220,60 L240,60 L240,80 L260,80 L260,100 L280,100 L280,120 L300,120 L300,140 L320,140 L320,160 L340,160 L340,140 L360,140 L360,120 L380,120 L380,100 L400,100 L400,80 L420,80 L420,60 L440,60 L440,40 L460,40 L460,60 L480,60 L480,80 L500,80 L500,100 L520,100 L520,120 L540,120 L540,140 L560,140 L560,160 L580,160 L580,180 L600,180 L600,160 L620,160 L620,140 L640,140 L640,120 L660,120 L660,100 L680,100 L680,80 L700,80 L700,60 L720,60 L720,40 L740,40 L740,60 L760,60 L760,80 L780,80 L780,100 L800,100 L800,120 L820,120 L820,140 L840,140 L840,160 L860,160 L860,180 L880,180 L880,160 L900,160 L900,140 L920,140 L920,120 L940,120 L940,100 L960,100 L960,80 L980,80 L980,60 L1000,60 L1000,200 Z' fill='rgba(0,0,0,0.2)'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: bottom;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.animate-pulse {
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes rainbow-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.bg-gradient-to-r {
+  background-size: 200% 200%;
+  animation: rainbow-text 2s linear infinite;
+}

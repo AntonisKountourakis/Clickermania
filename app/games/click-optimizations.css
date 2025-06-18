@@ -1,0 +1,13 @@
+/* Optimize animations for better performance */
+.click-effect {
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* Reduce animation complexity on mobile */
+@media (max-width: 768px) {
+  .click-effect {
+    /* Simpler animations for mobile */
+    animation-duration: 0.5s !important;
+  }
+}

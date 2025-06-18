@@ -1,0 +1,395 @@
+.zombie-clicker-container {
+  background: linear-gradient(to bottom, #1b1b1b, #2d2d2d);
+  font-family: "Creepster", "Arial", sans-serif;
+  color: #c10000;
+}
+
+.zombie-clicker-header {
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 3px solid #540000;
+  padding: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.zombie-clicker-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.zombie-clicker-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  color: #8a8a8a;
+}
+
+.zombie-game-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .zombie-game-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+.zombie-click-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  border: 2px solid #540000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.zombie-brain {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(to bottom right, #de8f8f, #c10000);
+  border-radius: 40% 40% 60% 50% / 50% 40% 60% 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.zombie-brain:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 5%, transparent 20%),
+    linear-gradient(90deg, transparent 50%, rgba(193, 0, 0, 0.5) 50%, transparent 51%),
+    linear-gradient(120deg, transparent 40%, rgba(193, 0, 0, 0.5) 40%, transparent 41%),
+    linear-gradient(45deg, transparent 30%, rgba(193, 0, 0, 0.5) 30%, transparent 31%);
+  background-size: 100%, 10px 10px, 15px 15px, 12px 12px;
+  border-radius: 40% 40% 60% 50% / 50% 40% 60% 50%;
+  opacity: 0.7;
+}
+
+.zombie-brain:hover {
+  transform: scale(1.05);
+}
+
+.zombie-brain:active {
+  transform: scale(0.95);
+}
+
+.zombie-stats {
+  color: #c10000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.zombie-brains {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.zombie-per-second {
+  font-size: 1rem;
+  color: #8a8a8a;
+}
+
+.zombie-upgrades {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px solid #540000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.zombie-upgrades::-webkit-scrollbar {
+  width: 8px;
+}
+
+.zombie-upgrades::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.zombie-upgrades::-webkit-scrollbar-thumb {
+  background-color: rgba(193, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.zombie-upgrade-title {
+  color: #c10000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.zombie-upgrade-item {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(193, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.zombie-upgrade-item:hover {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  transform: translateX(5px);
+  border-color: rgba(193, 0, 0, 0.7);
+}
+
+.zombie-upgrade-item.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.zombie-upgrade-item.disabled:hover {
+  transform: none;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  border-color: rgba(193, 0, 0, 0.3);
+}
+
+.zombie-upgrade-info {
+  color: #c4c4c4;
+}
+
+.zombie-upgrade-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #c10000;
+}
+
+.zombie-upgrade-description {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.zombie-upgrade-cost {
+  background: rgba(193, 0, 0, 0.2);
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #c10000;
+  font-weight: bold;
+  border: 1px solid rgba(193, 0, 0, 0.5);
+}
+
+.zombie-upgrade-owned {
+  background: rgba(193, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  color: #c10000;
+}
+
+@keyframes blood-drip {
+  0% {
+    transform: translateY(-5px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+.zombie-blood-drip {
+  position: absolute;
+  width: 3px;
+  height: 10px;
+  background-color: #c10000;
+  border-radius: 50%;
+  animation: blood-drip 1.5s infinite;
+}
+
+.zombie-achievement {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(193, 0, 0, 0.9);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: bottom 0.5s ease;
+  text-align: center;
+  font-weight: bold;
+}
+
+.zombie-achievement.show {
+  bottom: 20px;
+}
+
+.zombie-rank {
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  display: inline-block;
+  color: #c10000;
+  font-weight: bold;
+  border: 1px solid rgba(193, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+.zombie-click-effect {
+  position: absolute;
+  font-size: 1.2rem;
+  color: #c10000;
+  font-weight: bold;
+  animation: zombie-float-up 1.5s forwards;
+  pointer-events: none;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes zombie-float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.zombie-progress-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.zombie-progress-container {
+  width: 100%;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.zombie-progress-label {
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+  color: #8a8a8a;
+}
+
+.zombie-progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #540000, #c10000);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.zombie-prestige {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.zombie-prestige-button {
+  background: linear-gradient(to right, #540000, #c10000);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.zombie-prestige-button:hover {
+  background: linear-gradient(to right, #6e0000, #e00000);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(193, 0, 0, 0.3);
+}
+
+.zombie-prestige-button:disabled {
+  background: #3d3d3d;
+  cursor: not-allowed;
+  color: #8a8a8a;
+}
+
+.zombie-prestige-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* YouTube-style additions for the template */
+.video-progress {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.video-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #540000, #c10000);
+  transition: width 0.3s ease;
+}
+
+/* Click animation for the YouTube template */
+.click-animation {
+  animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
