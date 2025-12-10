@@ -22,7 +22,7 @@ export function AudioPlayer() {
 
   return (
     <>
-      <audio id="background-music" ref={audioRef} loop preload="auto" src="/Eternal-Click.mp3" />
+      <audio id="background-music" ref={audioRef} loop preload="auto" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Eternal%20Click-Anwgv1k0uF7BxW5v73F9p6a6L1VFW5.mp3" />
       <audio id="click-sound" ref={clickSoundRef} preload="auto" src="/click-sound.mp3" />
     </>
   )

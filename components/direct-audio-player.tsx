@@ -59,7 +59,7 @@ export function DirectAudioPlayer() {
 
   return (
     <>
-      <audio id="background-music" ref={audioRef} preload="auto" loop data-src="/Eternal-Click.mp3" />
+      <audio id="background-music" ref={audioRef} preload="auto" loop data-src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Eternal%20Click-Anwgv1k0uF7BxW5v73F9p6a6L1VFW5.mp3" />
       <audio id="click-sound" ref={clickSoundRef} preload="auto" data-src="/click-sound.mp3" />
     </>
   )

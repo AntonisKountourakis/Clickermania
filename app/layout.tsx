@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "ClickerMania - The Ultimate Clicker Game Collection",
   description: "Explore a variety of clicker games in one place. Click, upgrade, and watch your empire grow!",
   viewport: "width=device-width, initial-scale=1, viewport-fit=cover", // Add viewport-fit for notched devices
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
