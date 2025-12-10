@@ -1,0 +1,359 @@
+// app/privacy-policy2/page.tsx
+import React from "react";
+
+const PrivacyPolicy2Page = () => {
+  return (
+    <main className="min-h-screen bg-gray-50 text-gray-900">
+      <div className="mx-auto max-w-3xl px-4 py-10">
+        <h1 className="text-3xl font-bold mb-2">PRIVACY POLICY</h1>
+        <p className="text-sm text-gray-600 mb-8">
+          Last updated: [Date]
+        </p>
+
+        {/* 1. Who we are */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">1. Who we are</h2>
+          <p className="mb-2">
+            The application <strong>[App Name]</strong> (hereinafter referred to
+            as the &quot;App&quot;) is developed and provided by{" "}
+            <strong>[Company or Developer Name]</strong>, with registered address{" "}
+            <strong>[Address]</strong>, Tax ID <strong>[Tax ID, if applicable]</strong>.
+          </p>
+          <p>
+            For any questions about this Privacy Policy, you can contact us at:
+            <br />
+            📧 <strong>[Privacy contact email]</strong>
+          </p>
+        </section>
+
+        {/* 2. Scope */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">2. Scope</h2>
+          <p>
+            This Privacy Policy explains how we collect, use, store, and share
+            data when you use:
+          </p>
+          <ul className="list-disc list-inside mt-2 space-y-1">
+            <li>
+              the <strong>[App Name]</strong> mobile application on Google Play,
+            </li>
+            <li>
+              our website / web app built with Next.js, including API routes and
+              server-side features (SSR/ISR).
+            </li>
+          </ul>
+        </section>
+
+        {/* 3. Data we collect */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">3. Data we collect</h2>
+          <p className="mb-2">
+            Adjust this section according to your app – remove anything you do
+            not actually use.
+          </p>
+
+          <h3 className="font-semibold mt-4 mb-2">
+            3.1 Data you provide to us
+          </h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              Account details (e.g. email, username, password – stored using
+              secure hashing)
+            </li>
+            <li>
+              Contact details (e.g. support email, messages sent via contact
+              forms)
+            </li>
+            <li>
+              [Any other fields you collect via forms: e.g. profile info, avatar,
+              etc.]
+            </li>
+          </ul>
+
+          <h3 className="font-semibold mt-4 mb-2">
+            3.2 Usage data &amp; technical data
+          </h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              Device data: device type, operating system, app/browser version
+            </li>
+            <li>
+              Log data: IP address*, access time, requested URLs, error codes
+            </li>
+            <li>
+              Usage statistics: screens/pages you visit, key actions performed in
+              the App
+            </li>
+          </ul>
+          <p className="text-sm text-gray-600 mt-1">
+            * If you anonymize IP addresses, clearly state it here.
+          </p>
+
+          <h3 className="font-semibold mt-4 mb-2">
+            3.3 Cookies, local storage, and similar technologies
+          </h3>
+          <p className="mb-2">
+            The App (Next.js) may use cookies and local storage for:
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Functional cookies (e.g. login/session management)</li>
+            <li>Preference cookies (e.g. language, theme)</li>
+            <li>[Optional] Analytics cookies (e.g. usage statistics)</li>
+            <li>[Optional] Advertising cookies</li>
+          </ul>
+        </section>
+
+        {/* 4. How we use your data */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">
+            4. How we use your data
+          </h2>
+          <ol className="list-decimal list-inside space-y-2">
+            <li>
+              <strong>To provide the core features of the App</strong>
+              <ul className="list-disc list-inside ml-5 mt-1 space-y-1">
+                <li>Creating and managing your account</li>
+                <li>Personalizing content</li>
+                <li>Storing your user settings and preferences</li>
+              </ul>
+            </li>
+            <li>
+              <strong>To improve the App</strong>
+              <ul className="list-disc list-inside ml-5 mt-1 space-y-1">
+                <li>Analyzing usage and performance</li>
+                <li>Identifying and fixing errors and crashes</li>
+              </ul>
+            </li>
+            <li>
+              <strong>To communicate with you</strong>
+              <ul className="list-disc list-inside ml-5 mt-1 space-y-1">
+                <li>Responding to support requests</li>
+                <li>
+                  Informing you about important changes to terms or security
+                  matters
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>[Optional] For advertising and promotional purposes</strong>
+              <ul className="list-disc list-inside ml-5 mt-1 space-y-1">
+                <li>Showing ads within the App</li>
+                <li>Measuring the effectiveness of ads</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
+        {/* 5. Legal bases */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">
+            5. Legal bases for processing (GDPR)
+          </h2>
+          <p className="mb-2">
+            If you are located in the EU/EEA, we process your personal data based
+            on one or more of the following legal bases:
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              <strong>Contract performance</strong> – to provide you with the App
+              and its services
+            </li>
+            <li>
+              <strong>Legitimate interests</strong> – e.g. to improve the service,
+              prevent abuse
+            </li>
+            <li>
+              <strong>Consent</strong> – where required by law (e.g. certain
+              cookies/analytics/ads)
+            </li>
+            <li>
+              <strong>Legal obligation</strong> – where we must retain or process
+              data to comply with legal requirements
+            </li>
+          </ul>
+        </section>
+
+        {/* 6. Sharing data with third parties */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">
+            6. Sharing data with third parties
+          </h2>
+          <p className="mb-2">
+            We may share your data with the following categories of recipients, only
+            to the extent necessary:
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              Hosting and infrastructure providers (e.g. [Vercel / other hosting])
+            </li>
+            <li>
+              Analytics and performance providers (e.g. [Google Analytics / Sentry])
+            </li>
+            <li>
+              [Optional] Advertising partners (e.g. [Google AdMob / other])
+            </li>
+            <li>
+              Legal and regulatory authorities, where required by law or to protect
+              our legal rights
+            </li>
+          </ul>
+          <p className="mt-2">
+            We do not sell your personal data to third parties.
+          </p>
+        </section>
+
+        {/* 7. Data retention */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">7. Data retention</h2>
+          <p className="mb-2">
+            We retain your data only for as long as necessary for:
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>providing the services of the App,</li>
+            <li>complying with legal obligations,</li>
+            <li>resolving disputes and enforcing our agreements.</li>
+          </ul>
+          <p className="mt-2">
+            For example: account data is retained until your account is deleted or
+            for [X years] after your last active use; logs and technical data may be
+            kept for up to [X days/months] for security and debugging.
+          </p>
+        </section>
+
+        {/* 8. Account & data deletion */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">
+            8. Account and data deletion
+          </h2>
+          <p className="mb-2">
+            You can request deletion of your account and personal data:
+          </p>
+          <ol className="list-decimal list-inside space-y-2">
+            <li>
+              <strong>From within the App</strong>
+              <br />
+              By going to:{" "}
+              <strong>[Settings → Account → Delete account]</strong>.
+            </li>
+            <li>
+              <strong>Via the web</strong>
+              <br />
+              By visiting:{" "}
+              <strong>[URL of your web deletion page/form]</strong>.
+            </li>
+          </ol>
+          <p className="mt-2">
+            We will process your deletion request within a reasonable timeframe and
+            will delete or anonymize your data, except for data we are required to
+            retain by law.
+          </p>
+        </section>
+
+        {/* 9. Data security */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">9. Data security</h2>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Use of HTTPS/TLS for all connections</li>
+            <li>Hashing/encryption of passwords</li>
+            <li>Limited access to databases to authorized personnel/systems</li>
+            <li>Regular updates of software and dependencies (Next.js, etc.)</li>
+          </ul>
+          <p className="mt-2">
+            No method of transmission or storage is 100% secure, but we use
+            reasonable measures to protect your data.
+          </p>
+        </section>
+
+        {/* 10. Your rights (GDPR) */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">
+            10. Your rights (GDPR)
+          </h2>
+          <p className="mb-2">
+            Depending on your location and applicable law (especially if you are in
+            the EU/EEA), you may have the right to:
+          </p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Access your personal data</li>
+            <li>Rectify inaccurate or incomplete data</li>
+            <li>Request erasure of your data (&quot;right to be forgotten&quot;)</li>
+            <li>Restrict processing of your data</li>
+            <li>Data portability</li>
+            <li>
+              Object to processing (especially where based on legitimate interests or
+              direct marketing)
+            </li>
+            <li>
+              Withdraw consent where processing is based on your consent
+            </li>
+          </ul>
+          <p className="mt-2">
+            To exercise any of these rights, please contact us at:{" "}
+            <strong>[Privacy contact email]</strong>. You also have the right to
+            lodge a complaint with your local data protection authority.
+          </p>
+        </section>
+
+        {/* 11. Children’s data */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">11. Children&apos;s data</h2>
+          <p className="mb-2">
+            [Choose according to your app&apos;s audience. For example:]
+          </p>
+          <p>
+            The App is not directed to children under the age of{" "}
+            <strong>[X]</strong>, and we do not knowingly collect personal data from
+            children. If we become aware that we have collected such data, we will
+            take steps to delete it.
+          </p>
+        </section>
+
+        {/* 12. International data transfers */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">
+            12. International data transfers
+          </h2>
+          <p>
+            Your data may be stored and processed on servers located outside your
+            country of residence (for example, in data centers of [hosting provider]
+            in the EU and/or other countries). Where we transfer personal data
+            outside the EU/EEA, we implement appropriate safeguards to ensure an
+            adequate level of protection (such as standard contractual clauses).
+          </p>
+        </section>
+
+        {/* 13. Changes to this policy */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">
+            13. Changes to this Privacy Policy
+          </h2>
+          <p>
+            We may update this Privacy Policy from time to time. When we make
+            material changes, we will update the &quot;Last updated&quot; date at
+            the top of this page and, where appropriate, notify you within the App.
+            Your continued use of the App after such changes means you accept the
+            updated Privacy Policy.
+          </p>
+        </section>
+
+        {/* 14. Contact */}
+        <section className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">14. Contact</h2>
+          <p>
+            If you have any questions about how we handle your personal data, you
+            can contact us at:
+          </p>
+          <p className="mt-2">
+            📧 Email: <strong>[Privacy contact email]</strong>
+            <br />
+            📍 Address: <strong>[Postal address]</strong>
+            <br />
+            🌐 Website: <strong>[Website / Next.js app URL]</strong>
+          </p>
+        </section>
+      </div>
+    </main>
+  );
+};
+
+export default PrivacyPolicy2Page;
